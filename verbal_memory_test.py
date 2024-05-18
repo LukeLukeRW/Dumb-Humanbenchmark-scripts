@@ -3,7 +3,7 @@ words = set() #making a set will mean lookup is faster probs
 x=500 #Value
 
 def main():
-    for _ in range(1,x+1):
+    for _ in range(1,x*2,2):
         a().click()
 
 def a():
