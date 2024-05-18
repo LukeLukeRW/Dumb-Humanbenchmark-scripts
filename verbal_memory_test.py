@@ -1,4 +1,14 @@
-import selenium;from bs4 import BeautifulSoup;import time;from selenium.webdriver.chrome.service import Service as ChromeService;from webdriver_manager.chrome import ChromeDriverManager;from selenium.webdriver.chrome.options import Options;import pyautogui;start_button = (796,947);driver = selenium.webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()));url = 'https://humanbenchmark.com/tests/verbal-memory';driver.get(url);pyautogui.click(start_button);time.sleep(2);from selenium.webdriver.common.by import By;seen,new= driver.find_element(By.XPATH, "//button[text()='SEEN']"),driver.find_element(By.XPATH, "//button[text()='NEW']")
+import selenium;from bs4 import BeautifulSoup;import time;from selenium.webdriver.chrome.service import Service as ChromeService;from webdriver_manager.chrome import ChromeDriverManager;from selenium.webdriver.chrome.options import Options;import pyautogui;from selenium.webdriver.common.by import By
+start_button = (796,947)
+driver = selenium.webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+url = 'https://humanbenchmark.com/tests/verbal-memory'
+driver.get(url)
+pyautogui.click(start_button)
+
+time.sleep(2) #wait for it to load
+
+seen = driver.find_element(By.XPATH, "//button[text()='SEEN']")
+new= driver.find_element(By.XPATH, "//button[text()='NEW']")
 words = set() #making a set will mean lookup is faster probs
 x=500 #Value
 
